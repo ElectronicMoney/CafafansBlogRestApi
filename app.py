@@ -3,9 +3,32 @@ import os
 
 app = Flask(__name__)
 
+# Home Page
 @app.route('/')
 def home():
-    return render_template('home.html')
+    posts = [
+                {
+                'id': 1,
+                'author': 'Emeka Augustine',
+                'title': 'Nigerian is a corrupt country!',
+                'body': 'The level of corruption in Nigeria is unbearable.',
+                'date_posted': 'December 15, 2019'
+            },
+            {
+                'id': 2,
+                'author': 'Ben James',
+                'title': 'Ghana is a corrupt country!',
+                'body': 'The level of corruption in Ghana is too bad.',
+                'date_posted': 'December 16, 2019'
+            }
+    ]
+
+    return render_template('home.html', posts=posts)
+
+# About Us
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 if __name__ == '__main__':
