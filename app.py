@@ -11,14 +11,14 @@ def home():
                 'id': 1,
                 'author': 'Emeka Augustine',
                 'title': 'Nigerian is a corrupt country!',
-                'body': 'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+                'content': 'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
                 'date_posted': 'December 15, 2019'
             },
             {
                 'id': 2,
                 'author': 'Ben James',
                 'title': 'Ghana is a corrupt country!',
-                'body': ' Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+                'content': ' Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
                 'date_posted': 'December 16, 2019'
             }
     ]
