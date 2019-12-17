@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 import os
 from forms.LoginForm import LoginForm
 from forms.RegisterForm import RegisterForm
@@ -38,15 +38,25 @@ def about():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit:
+        # Check if the request method is post
+        if request.method == 'POST':
+            if form.email.data == 'admin@cafafans.com' and form.password.data == 'password':
+                flash(f'You have been logged in!', 'success')
+                return redirect(url_for('home'))
+            else:
+                flash(f'Invalid username or Password', 'danger')
     return render_template('login.html', title='Login', form=form)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
-    # Check if the form is validated
-    if form.validate_on_submit():
-        flash(f'Acount Created for User {form.username.data}!', 'success')
-        return redirect(url_for('home'))
+    if request.method == 'POST':
+        # Check if the form is validated
+        if form.validate_on_submit():
+            flash(f'Acount Created for User {form.username.data}!', 'success')
+            return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
 
